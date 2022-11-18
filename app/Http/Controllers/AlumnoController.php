@@ -154,4 +154,5 @@ class AlumnoController extends Controller
 
         return redirect(route('alumnos.index'));
     }
+    //cometario
 }

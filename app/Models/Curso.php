@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 /**
  * Class Curso
  * @package App\Models
- * @version November 4, 2022, 11:30 pm UTC
+ * @version November 11, 2022, 9:58 pm UTC
  *
  * @property string $nombre
  * @property string $descripcion
@@ -63,8 +63,6 @@ class Curso extends Model
         'fecha_fin' => 'required',
         'estado' => 'required'
     ];
-    public function alumnos (){
-        return $this->hasMany('App\Models\Alumnos');
-    }
+
     
 }

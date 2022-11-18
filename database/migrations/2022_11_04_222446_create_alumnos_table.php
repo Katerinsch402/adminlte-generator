@@ -16,8 +16,8 @@ class CreateAlumnosTable extends Migration
     {
         Schema::create('alumnos', function (Blueprint $table) {
             $table->id('id');
-            $table->unsignedBigInteger('cursos_id');
-            $table->foreign('cursos_id')->references('id')->on('cursos');
+            $table->unsignedBigInteger('curso_id');
+            $table->foreign('curso_id')->references('id')->on('cursos');
             $table->string('nombre');
             $table->string('apellido');
             $table->text('edad');

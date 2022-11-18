@@ -2,17 +2,17 @@
 
 namespace Database\Factories;
 
-use App\Models\Curso;
+use App\Models\Test;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class CursoFactory extends Factory
+class TestFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = Curso::class;
+    protected $model = Test::class;
 
     /**
      * Define the model's default state.
@@ -22,11 +22,7 @@ class CursoFactory extends Factory
     public function definition()
     {
         return [
-            'nombre' => $this->faker->word,
-        'descripcion' => $this->faker->word,
-        'fecha_inicio' => $this->faker->word,
-        'fecha_fin' => $this->faker->word,
-        'estado' => $this->faker->word,
+            'prueba' => $this->faker->word,
         'created_at' => $this->faker->date('Y-m-d H:i:s'),
         'updated_at' => $this->faker->date('Y-m-d H:i:s')
         ];

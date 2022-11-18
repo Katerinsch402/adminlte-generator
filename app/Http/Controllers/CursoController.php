@@ -151,6 +151,7 @@ class CursoController extends AppBaseController
 
         Flash::success('Curso deleted successfully.');
 
+        
         return redirect(route('cursos.index'));
     }
 }

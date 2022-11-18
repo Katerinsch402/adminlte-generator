@@ -1,32 +1,23 @@
 <div class="table-responsive">
-    <table class="table" id="cursos-table">
+    <table class="table" id="tests-table">
         <thead>
         <tr>
-            <th>Nombre</th>
-        <th>Descripcion</th>
-        <th>Fecha Inicio</th>
-        <th>Fecha Fin</th>
-        <th>Estado</th>
+            <th>Prueba</th>
             <th colspan="3">Action</th>
         </tr>
         </thead>
         <tbody>
-        @foreach($cursos as $curso)
+        @foreach($tests as $test)
             <tr>
-            <td>{{ $curso->nombre }}</td>
-            <td>{{ $curso->descripcion }}</td>
-            <td>{{ $curso->fecha_inicio }}</td>
-            <td>{{ $curso->fecha_fin }}</td>
-            <td>{{ $curso->estado }}</td>
-
+                <td>{{ $test->prueba }}</td>
                 <td width="120">
-                    {!! Form::open(['route' => ['cursos.destroy', $curso->id], 'method' => 'delete']) !!}
+                    {!! Form::open(['route' => ['tests.destroy', $test->id], 'method' => 'delete']) !!}
                     <div class='btn-group'>
-                        <a href="{{ route('cursos.show', [$curso->id]) }}"
+                        <a href="{{ route('tests.show', [$test->id]) }}"
                            class='btn btn-default btn-xs'>
                             <i class="far fa-eye"></i>
                         </a>
-                        <a href="{{ route('cursos.edit', [$curso->id]) }}"
+                        <a href="{{ route('tests.edit', [$test->id]) }}"
                            class='btn btn-default btn-xs'>
                             <i class="far fa-edit"></i>
                         </a>

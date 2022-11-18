@@ -61,7 +61,7 @@
     },
     {
         "name": "estado",
-        "dbType": "text",
+        "dbType": "string",
         "htmlType": "text",
         "validations": "required",
         "searchable": true,

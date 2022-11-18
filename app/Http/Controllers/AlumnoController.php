@@ -7,10 +7,13 @@ use App\Http\Requests\UpdateAlumnoRequest;
 use App\Repositories\AlumnoRepository;
 use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
+use Illuminate\Support\Collection;
+use App\Models\Alumno;
+use App\Models\Curso;
 use Flash;
 use Response;
 
-class AlumnoController extends AppBaseController
+class AlumnoController extends Controller
 {
     /** @var AlumnoRepository $alumnoRepository*/
     private $alumnoRepository;
@@ -42,9 +45,9 @@ class AlumnoController extends AppBaseController
      */
     public function create()
     {
-        $cursos =Curso::pluck('nombre','id');
-        return view('alumnos.create',compact('cursos'));
-        
+        $cursos=Curso::pluck('nombre','id');
+        return view('alumnos.create', compact('cursos'));
+
     }
 
     /**
@@ -83,7 +86,7 @@ class AlumnoController extends AppBaseController
             return redirect(route('alumnos.index'));
         }
 
-        return view('alumnos.show', compact('alumnos','cursos'))->with('alumno', $alumno);
+        return view('alumnos.show', compact('cursos'))->with('alumno', $alumno);
     }
 
     /**
@@ -104,7 +107,7 @@ class AlumnoController extends AppBaseController
             return redirect(route('alumnos.index'));
         }
 
-        return view('alumnos.edit', compact('alumnos','cursos'))->with('alumno', $alumno);
+        return view('alumnos.edit', compact('cursos'))->with('alumno', $alumno);
     }
 
     /**
@@ -118,7 +121,7 @@ class AlumnoController extends AppBaseController
     public function update($id, UpdateAlumnoRequest $request)
     {
         $alumnos=request()->except(['_token','_method']);
-        
+
         Alumno::where('id','=',$id)->update($alumnos);
 
         Flash::success('Alumno updated successfully.');

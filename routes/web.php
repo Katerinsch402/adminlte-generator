@@ -26,3 +26,6 @@ Route::resource('alumnos', App\Http\Controllers\AlumnoController::class);
 
 
 Route::resource('cursos', App\Http\Controllers\CursoController::class);
+
+
+Route::resource('tests', App\Http\Controllers\TestController::class);

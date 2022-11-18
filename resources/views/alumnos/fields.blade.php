@@ -4,6 +4,7 @@
     {!! Form::text('nombre', null, ['class' => 'form-control']) !!}
 </div>
 
+
 <!-- Apellido Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('apellido', 'Apellido:') !!}
@@ -52,8 +53,8 @@
     {!! Form::text('fecha_nac', null, ['class' => 'form-control']) !!}
 </div>
 
-<!-- Fecha Nac Field -->
+<!-- Cursos -->
 <div class="form-group col-sm-6">
-    {!! Form::label('curso_id', 'Curso Id:') !!}
+    {!! Form::label('curso_id', 'Cursos Existentes:') !!} <br>
     {!! Form::select('curso_id', $cursos, ['class' => 'form-control']) !!}
 </div>

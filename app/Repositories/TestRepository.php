@@ -2,26 +2,22 @@
 
 namespace App\Repositories;
 
-use App\Models\Curso;
+use App\Models\Test;
 use App\Repositories\BaseRepository;
 
 /**
- * Class CursoRepository
+ * Class TestRepository
  * @package App\Repositories
- * @version November 11, 2022, 9:58 pm UTC
+ * @version November 11, 2022, 11:42 pm UTC
 */
 
-class CursoRepository extends BaseRepository
+class TestRepository extends BaseRepository
 {
     /**
      * @var array
      */
     protected $fieldSearchable = [
-        'nombre',
-        'descripcion',
-        'fecha_inicio',
-        'fecha_fin',
-        'estado'
+        'prueba'
     ];
 
     /**
@@ -39,6 +35,6 @@ class CursoRepository extends BaseRepository
      **/
     public function model()
     {
-        return Curso::class;
+        return Test::class;
     }
 }
